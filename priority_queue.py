@@ -18,7 +18,7 @@ class PriorityQueue:
       return item
     else:
       return None
-  
+
   def _sift_up(self, index):
     while index > 0:
       parent_index = (index - 1) // 2
