@@ -7,17 +7,19 @@ class PriorityQueue:
     self.heap.append(entry)
     self._sift_up(len(self.heap) - 1)
 
-  def pop(self):
-    if len(self.heap) > 1:
-      self._swap(0, len(self.heap) - 1)
-      item = self.heap.pop()
-      self._sift_down(0)
-      return item
-    elif len(self.heap) == 1:
-      item = self.heap.pop()
-      return item
-    else:
-      return None
+def pop(self):
+    if len(self.heap) == 0:
+        return None
+      
+    min_priority_item_index = 0
+    for i in range(1, len(self.heap)):
+        if self.heap[i][0] < self.heap[min_priority_item_index][0]:
+            min_priority_item_index = i
+
+    min_priority_item = self.heap[min_priority_item_index]
+    del self.heap[min_priority_item_index]
+
+    return min_priority_item[1]
 
   def _sift_up(self, index):
     while index > 0:
