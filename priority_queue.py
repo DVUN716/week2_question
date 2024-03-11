@@ -18,8 +18,8 @@ def pop(self):
       return item
     else:
       return None
-
-  def _sift_up(self, index):
+  
+def _sift_up(self, index):
     while index > 0:
       parent_index = (index - 1) // 2
       if self.heap[parent_index][0] > self.heap[index][0]:
